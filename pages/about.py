@@ -3,7 +3,7 @@ from tkinter import Tk, Label, Button
 class AboutPage(Tk):
     def __init__(self):
         Tk.__init__(self)
-        self.eval('tk::PlaceWindow . center')
+        self.geometry("+500+200")
         self.resizable(False, False)
         self.title("Ceaser cipher Encrypter/Decrypter" )
         self.app_name = "Ceaser cipher Encrypter/Decrypter" 

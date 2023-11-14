@@ -4,7 +4,7 @@ from functions import encrypt as functions_module
 class EncryptPage(Tk):
     def __init__(self):
         Tk.__init__(self)
-        self.eval('tk::PlaceWindow . center')
+        self.geometry("+500+200")
         self.resizable(False, False)
         self.title("Ceaser cipher Encrypter/Decrypter" )
 
