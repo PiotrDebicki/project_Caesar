@@ -23,9 +23,11 @@ class InitWindow(Tk):
         mainframe.pack()
 
         #adding elements to frame
-        tk.Button(mainframe, text="Encrypt the text", command=lambda: encrypter.EncryptPage().init_page(), width=20).pack()
-        tk.Button(mainframe, text="About Project", command=lambda: about.AboutPage().init_page(), width=20).pack()
-        tk.Button(mainframe, text="Close", command=lambda: self.destroy(), width=20).pack()
+        tk.Button(mainframe, text="Encrypt the text", font=12, command=lambda: encrypter.EncryptPage().init_page(), width=20).pack()
+        tk.Button(mainframe, text="Decrypt the text", font=12, command=lambda: self.open_decrypt(), width=20).pack()
+        tk.Button(mainframe, text="About Project", font=12, command=lambda: about.AboutPage().init_page(), width=20).pack()
+        tk.Button(mainframe, text="Close", font=12, command=lambda: self.destroy(), width=20).pack()
+
 
 
 if __name__ == "__main__":
