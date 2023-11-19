@@ -25,14 +25,15 @@ class EncryptPage(Tk):
         self.text_entry.grid(column=1, row=0)
 
         Button(self, text="Encrypt", command=lambda: self.encrypt(), font=12).pack()
-        self.encrypted_text = Entry(self, font=12)
+        self.encrypted_text = Text(self, width=40, height=10, font=12)
         self.encrypted_text.pack()
         Button(self, text="Close", command=lambda: self.close_page(), font=12).pack()
 
     def encrypt(self):
-        self.encrypted_text.delete(0, len(self.encrypted_text.get()))
-        self.encrypted_text.insert(0, functions_module.encrypt(self.text_entry.get("1.0", "end-1c"), int(self.shift_entry.get())))
-        self.copy_to_clipboard(self.encrypted_text.get())
+        if(len(self.encrypted_text.get("1.0", "end-1c")) >0):
+            self.encrypted_text.delete("1.0", len(self.encrypted_text.get("1.0", "end-1c")))
+        self.encrypted_text.insert("1.0", functions_module.encrypt(self.text_entry.get("1.0", "end-1c"), int(self.shift_entry.get())))
+        self.copy_to_clipboard(self.encrypted_text.get("1.0", "end-1c"))
 
     def close_page(self):
         self.destroy()

@@ -20,16 +20,21 @@ class DecryptPage(Tk):
         
         Button(self, text="Decrypt", command=lambda: self.decrypt(), font=12).pack()
 
-        self.decrypted_text = Entry(self, font=12)
+        self.decrypted_text = Text(self, width=40, height=10, font=12)
         self.decrypted_text.pack()
 
         Button(self, text="Close", command=lambda: self.close_page(), font=12).pack()
 
 
     def decrypt(self):
-        self.decrypted_text.delete(0, len(self.decrypted_text.get()))
-        self.decrypted_text.insert(0, functions_module.decrypt(self.text_entry.get("1.0", "end-1c")))
+        if(len(self.decrypted_text.get("1.0", "end-1c")) >0):
+            self.decrypted_text.delete("1.0", len(self.decrypted_text.get("1.0", "end-1c")))
+        self.decrypted_text.insert("1.0", functions_module.decrypt(self.text_entry.get("1.0", "end-1c")))
+        self.copy_to_clipboard(self.decrypted_text.get("1.0", "end-1c"))
 
+    def copy_to_clipboard(self, text_to_copy):
+        self.clipboard_clear()
+        self.clipboard_append(text_to_copy)
 
     def close_page(self):
         self.destroy()
