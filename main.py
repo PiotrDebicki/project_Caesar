@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import Tk
 from tkinter.ttk import Frame
-from pages import about, encrypter
+from pages import about, encrypter, decrypter
 
 class InitWindow(Tk):
     def __init__(self):
@@ -23,7 +23,7 @@ class InitWindow(Tk):
 
         #adding elements to frame
         tk.Button(mainframe, text="Encrypt the text", font=12, command=lambda: encrypter.EncryptPage().init_page(), width=20).pack()
-        tk.Button(mainframe, text="Decrypt the text", font=12, command=lambda: decrypter.DecryptPage(), width=20).pack()
+        tk.Button(mainframe, text="Decrypt the text", font=12, command=lambda: decrypter.DecryptPage().init_page(), width=20).pack()
         tk.Button(mainframe, text="About Project", font=12, command=lambda: about.AboutPage().init_page(), width=20).pack()
         tk.Button(mainframe, text="Close", font=12, command=lambda: self.destroy(), width=20).pack()
 
