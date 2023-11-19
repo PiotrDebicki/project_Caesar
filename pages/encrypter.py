@@ -32,9 +32,14 @@ class EncryptPage(Tk):
     def encrypt(self):
         self.encrypted_text.delete(0, len(self.encrypted_text.get()))
         self.encrypted_text.insert(0, functions_module.encrypt(self.text_entry.get("1.0", "end-1c"), int(self.shift_entry.get())))
+        self.copy_to_clipboard(self.encrypted_text.get())
 
     def close_page(self):
         self.destroy()
+
+    def copy_to_clipboard(self, text_to_copy):
+        self.clipboard_clear()
+        self.clipboard_append(text_to_copy)
 
 if __name__ == "__main__":
     APP_ABOUT = EncryptPage()
