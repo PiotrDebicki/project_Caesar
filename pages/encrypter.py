@@ -30,10 +30,9 @@ class EncryptPage(Tk):
         Button(self, text="Close", command=lambda: self.close_page(), font=12).pack()
 
     def encrypt(self):
-        if(len(self.encrypted_text.get("1.0", "end-1c")) >0):
-            self.encrypted_text.delete("1.0", len(self.encrypted_text.get("1.0", "end-1c")))
-        self.encrypted_text.insert("1.0", functions_module.encrypt(self.text_entry.get("1.0", "end-1c"), int(self.shift_entry.get())))
-        self.copy_to_clipboard(self.encrypted_text.get("1.0", "end-1c"))
+        self.encrypted_text.delete('1.0' , END)
+        self.encrypted_text.insert("1.0", functions_module.encrypt(self.text_entry.get("1.0", END), int(self.shift_entry.get())))
+        self.copy_to_clipboard(self.encrypted_text.get("1.0", END))
 
     def close_page(self):
         self.destroy()

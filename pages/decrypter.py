@@ -27,10 +27,9 @@ class DecryptPage(Tk):
 
 
     def decrypt(self):
-        if(len(self.decrypted_text.get("1.0", "end-1c")) >0):
-            self.decrypted_text.delete("1.0", len(self.decrypted_text.get("1.0", "end-1c")))
-        self.decrypted_text.insert("1.0", functions_module.decrypt(self.text_entry.get("1.0", "end-1c")))
-        self.copy_to_clipboard(self.decrypted_text.get("1.0", "end-1c"))
+        self.decrypted_text.delete("1.0", END)
+        self.decrypted_text.insert("1.0", functions_module.decrypt(self.text_entry.get("1.0", END)))
+        self.copy_to_clipboard(self.decrypted_text.get("1.0", END))
 
     def copy_to_clipboard(self, text_to_copy):
         self.clipboard_clear()
