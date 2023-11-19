@@ -20,7 +20,7 @@ def decrypt(text):
       else:
         if not word == "":
           actuall_words_counter += 1
-          if word in valid_words:
+          if word.lower() in valid_words:
             actuall_decoded_words+=1
           actuall_encrypted +=word
           word = ""
