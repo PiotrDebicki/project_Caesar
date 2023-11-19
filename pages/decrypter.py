@@ -1,4 +1,4 @@
-from tkinter import Tk, Label, Button, ttk, Text, StringVar, Entry
+from tkinter import Tk, Label, Button, ttk, Text, END
 from functions import decrypt as functions_module
 
 class DecryptPage(Tk):

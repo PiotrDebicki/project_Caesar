@@ -1,4 +1,4 @@
-from tkinter import Tk, Label, Button, ttk, Spinbox, Text, StringVar, Entry
+from tkinter import Tk, Label, Button, ttk, Spinbox, Text, StringVar, END
 from functions import encrypt as functions_module
 
 class EncryptPage(Tk):
