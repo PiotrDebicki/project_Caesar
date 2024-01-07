@@ -44,6 +44,8 @@ def decrypting_process(shift):
         actuall_encrypted +=word
         word = ""
       actuall_encrypted+=char
+    if(actuall_decoded_words>30 and actuall_decoded_words/actuall_words_counter <0.3):
+      break
   try:
     actuall_propability = actuall_decoded_words/actuall_words_counter
     if(actuall_propability>propability):
