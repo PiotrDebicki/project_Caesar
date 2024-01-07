@@ -9,7 +9,7 @@ class AboutPage(Tk):
         self.app_name = "Ceaser cipher Encrypter/Decrypter" 
         self.app_version = "0.1.1"
         self.app_url = "https://github.com/PiotrDebicki/project_Caesar"
-        self.app_ = "Copyright © 2018 Piotr Debicki.\nAll rights reserved."
+        self.app_ = "Copyright © 2024 Piotr Debicki.\nAll rights reserved."
 
     def init_page(self):
         Label(self, text=self.app_name).pack()
